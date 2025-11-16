@@ -1,38 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TFEID Dataset Application</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6; }
-    h1 { color: #003366; }
-    a.button {
-      display: inline-block;
-      padding: 10px 18px;
-      background: #0055aa;
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    header {
+      background-color: #004080;
       color: white;
-      text-decoration: none;
-      border-radius: 6px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      font-size: 1.1rem;
       margin-top: 10px;
     }
-    a.button:hover { background: #003f7f; }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #004080;
+      margin-top: 40px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 15px 0;
+      background-color: #0073e6;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #005bb5;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .emoji {
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>TFEID Dataset Application</h1>
-  <p>Thank you for your interest in our dataset. Please review the documentation and complete the application form below.</p>
+  <header>
+    <h1>📊 TFEID Dataset Application</h1>
+    <p>Thank you for your interest in our Taiwanese Facial Expression Image Database</p>
+  </header>
 
-  <h2>📄 Download Documentation</h2>
-  <p>You can download the PDF description of the dataset here:</p>
-  <a class="button" href="TFEID_document.pdf" download>Download PDF</a>
+  <main>
+    <h2>📄 Download Dataset Documentation</h2>
+    <p>Please read the documentation before submitting your application.</p>
+    <a class="button" href="TFEID_Application_Guide.pdf" download>Download PDF</a>
 
-  <h2>📝 Application Form</h2>
-  <p>Please fill out the form at the following link:</p>
-  <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdOAjodim1jxG2AC0CaxUZeCdHLWOu3EmLrxUe5B4MOyvv50w/viewform" target="_blank">Open Application Form</a>
+    <h2>📝 Application Form</h2>
+    <p>Submit your application through our Google Form:</p>
+    <a class="button" href="YOUR_GOOGLE_FORM_LINK" target="_blank">Open Application Form</a>
 
-  <br><br>
-  <p>If you have any questions, please contact us at <b>tfeidnycu@gmail.com</b></p>
+    <h2>ℹ️ Notes</h2>
+    <ul>
+      <li>After submission, you will receive a confirmation email.</li>
+      <li>Applications are reviewed by the dataset administrators.</li>
+      <li>If approved, access instructions will be sent to your email.</li>
+    </ul>
+  </main>
+
+  <footer>
+    📧 For questions, contact: <b>tfeidnycu@gmail.com</b><br>
+    This is an official TFEID dataset application page.
+  </footer>
 
 </body>
 </html>
+
