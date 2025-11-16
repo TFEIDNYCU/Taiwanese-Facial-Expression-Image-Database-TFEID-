@@ -7,6 +7,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* ===== 基本樣式 ===== */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -14,43 +15,78 @@
       background-color: #f5f7fa;
       color: #333;
     }
+
+    a {
+      text-decoration: none;
+    }
+
     header {
-      background-color: #004080;
+      background: linear-gradient(90deg, #004080, #0073e6);
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
+
+    header img {
+      max-width: 150px;
+      margin-bottom: 15px;
+    }
+
     header h1 {
       margin: 0;
       font-size: 2rem;
     }
+
     header p {
-      font-size: 1.1rem;
       margin-top: 10px;
+      font-size: 1.1rem;
     }
+
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
+
     h2 {
       color: #004080;
       margin-top: 40px;
     }
+
     .button {
       display: inline-block;
-      padding: 12px 25px;
+      padding: 15px 30px;
       margin: 15px 0;
       background-color: #0073e6;
       color: white;
-      text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
       transition: background-color 0.3s;
+      position: relative;
+      overflow: hidden;
     }
+
     .button:hover {
       background-color: #005bb5;
     }
+
+    /* ===== 下載進度條 ===== */
+    .progress-container {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 8px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 12px;
+      background-color: #0073e6;
+      border-radius: 8px;
+      transition: width 0.3s;
+    }
+
     footer {
       text-align: center;
       margin-top: 60px;
@@ -58,15 +94,20 @@
       font-size: 0.9rem;
       color: #777;
     }
-    .emoji {
-      font-size: 1.2rem;
-      margin-right: 5px;
+
+    /* ===== 響應式 ===== */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      header p { font-size: 1rem; }
+      .button { padding: 12px 20px; font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <!-- Logo / Banner -->
+    <img src="cropped-signal-only-bml-web.jpg" alt="TFEID Logo">
     <h1>📊 TFEID Dataset Application</h1>
     <p>Thank you for your interest in our Taiwanese Facial Expression Image Database</p>
   </header>
@@ -74,7 +115,10 @@
   <main>
     <h2>📄 Download Dataset Documentation</h2>
     <p>Please read the documentation before submitting your application.</p>
-    <a class="button" href="TFEID_document.pdf" download>Download PDF</a>
+    <a class="button" id="downloadBtn" href="TFEID_document.pdf" download>Download PDF</a>
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
 
     <h2>📝 Application Form</h2>
     <p>Submit your application through our Google Form:</p>
@@ -93,6 +137,25 @@
     This is an official TFEID dataset application page.
   </footer>
 
+  <script>
+    // ===== 下載進度動畫 =====
+    const downloadBtn = document.getElementById('downloadBtn');
+    const progressContainer = document.getElementById('progressContainer');
+    const progressBar = document.getElementById('progressBar');
+
+    downloadBtn.addEventListener('click', function(e) {
+      progressContainer.style.display = 'block';
+      let width = 0;
+      const interval = setInterval(() => {
+        if(width >= 100){
+          clearInterval(interval);
+        } else {
+          width += 10;
+          progressBar.style.width = width + '%';
+        }
+      }, 100);
+    });
+  </script>
+
 </body>
 </html>
-
