@@ -20,28 +20,38 @@
       text-decoration: none;
     }
 
+    /* ===== Header 修改 ===== */
     header {
-      background: linear-gradient(90deg, #004080, #0073e6);
+      position: relative;
+      background-image: url('cropped-signal-only-bml-web.jpg'); /* Logo 背景 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
+      overflow: hidden;
     }
 
-    header img {
-      max-width: 150px;
-      margin-bottom: 15px;
+    .header-overlay {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* 半透明遮罩 */
+      z-index: 0;
     }
 
-    header h1 {
+    header h1, header p {
+      position: relative;
+      z-index: 1;
       margin: 0;
-      font-size: 2rem;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-    }
+    header h1 { font-size: 2rem; }
+    header p { margin-top: 10px; font-size: 1.1rem; }
 
+    /* ===== 其他樣式 ===== */
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -106,8 +116,7 @@
 <body>
 
   <header>
-    <!-- Logo / Banner -->
-    <img src="cropped-signal-only-bml-web.jpg" alt="TFEID Logo">
+    <div class="header-overlay"></div>
     <h1>📊 TFEID Dataset Application</h1>
     <p>Thank you for your interest in our Taiwanese Facial Expression Image Database</p>
   </header>
